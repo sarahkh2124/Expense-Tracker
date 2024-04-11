@@ -35,15 +35,15 @@ export const GlobalProvider = ({children}) => {
         getIncomes()
     }
 
-    // const totalIncome = () => {
-    //     let totalIncome = 0;
-    //     incomes.forEach((income) =>{
-    //         totalIncome = totalIncome + income.amount
-    //     })
+    const totalIncome = () => {
+        let totalIncome = 0;
+        incomes.forEach((income) =>{
+            totalIncome = totalIncome + income.amount
+        })
 
-    //     return totalIncome;
-    // }
-
+        return totalIncome;
+    }
+    console.log('total', totalIncome());
 
     // //calculate incomes
     // const addExpense = async (income) => {
@@ -94,7 +94,8 @@ export const GlobalProvider = ({children}) => {
             addIncome,
             getIncomes,
             incomes,
-            deleteIncome
+            deleteIncome,
+            totalIncome
             }}>
             {children}
         </GlobalContext.Provider>
