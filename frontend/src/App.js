@@ -5,9 +5,9 @@ import {MainLayout} from './styles/Layouts'
 import Orb from './Components/Orb/Orb'
 import Navigation from './Components/Navigation/Navigation'
 import Dashboard from './Components/Dashboard/Dashboard';
-import Income from './Components/Income/Income'
+import Income from './Components/Income/Income';
 import Expenses from './Components/Expenses/Expenses';
-
+import { useGlobalContext } from './context/globalContext';
 
 function App() {
   const [active, setActive] = useState(1)
@@ -30,40 +30,25 @@ function App() {
     }
   }
 
-
   const orbMemo = useMemo(() => {
     return <Orb />
   },[])
-  // return (
-  //   <div className="App">
-      
-  //   </div>
-  // );
-  // return(
-  // <AppStyled bg={bg} className="App">
-  //     {orbMemo}
-  //     <MainLayout>
-  //       <Navigation active={active} setActive={setActive} />
-  //       <main>
-  //         {displayData()}
-  //       </main>
-  //     </MainLayout>
-  //   </AppStyled>
-  // );
-  return(
-    <AppStyled bg={bg} className="App">
-        {orbMemo}
-        <MainLayout>
-        <Navigation active={active} setActive={setActive} />
-        <main>
-           <h2>Main</h2>
-           {displayData()}
-        </main>
-        </MainLayout>
-      </AppStyled>
-    );
-}
 
+  return (
+    <AppStyled bg={bg} className="App">
+      {orbMemo}
+      <MainLayout>
+      <Navigation active={active} setActive={setActive} />
+      <main>
+        {displayData()}
+      </main>
+       
+
+      </MainLayout>
+      
+    </AppStyled>
+  );
+}
 
 const AppStyled = styled.div`
   height: 100vh;
@@ -81,4 +66,7 @@ const AppStyled = styled.div`
     }
   }
 `;
+
 export default App;
+
+
