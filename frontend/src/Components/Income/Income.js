@@ -85,4 +85,3 @@ const IncomeStyled = styled.div`
 export default Income
 
 
-//const {addIncome,incomes, getIncomes, deleteIncome, totalIncome} = useGlobalContext()
